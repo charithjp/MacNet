@@ -24,12 +24,12 @@ class MacNet:
                         "jsonrpc": "2.0",
                         "method": "MacNet",
                         "params":
-                            {
-                                "FClass": 4,
-                                "FNum": 2,
-                                "Chan": start_ch,
-                                "Len": read_num
-                            },
+                        {
+                            "FClass": 4,
+                            "FNum": 2,
+                            "Chan": start_ch,
+                            "Len": read_num
+                        },
                         "id": 1987
                     }
         rx_json = self._transact_json(tx=tx_json)
@@ -44,12 +44,12 @@ class MacNet:
                         "jsonrpc": "2.0",
                         "method": "MacNet",
                         "params":
-                            {
-                                "FClass": 4,
-                                "FNum": 3,
-                                "Chan": start_ch,
-                                "Len": read_num
-                            },
+                        {
+                            "FClass": 4,
+                            "FNum": 3,
+                            "Chan": start_ch,
+                            "Len": read_num
+                        },
                         "id": 1987
                     }
         rx_json = self._transact_json(tx=tx_json)
@@ -64,11 +64,11 @@ class MacNet:
                         "jsonrpc": "2.0",
                         "method": "MacNet",
                         "params":
-                            {
-                                "FClass": 4,
-                                "FNum": 7,
-                                "Chan": channel
-                            },
+                        {
+                            "FClass": 4,
+                            "FNum": 7,
+                            "Chan": channel
+                        },
                         "id": 1987
                     }
         rx_json = self._transact_json(tx=tx_json)
@@ -84,9 +84,8 @@ class MacNet:
         rx_int = self.sock.recv(buf_size)
         return json.loads(rx_int)
 
-if __name__ == '__main__':
-    import time
 
+if __name__ == '__main__':
     conn = MacNet(address="192.168.133.194", port=57570)
     temp = conn.read_voltage(start_ch=0, read_num=24)
     print(temp)
